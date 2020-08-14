@@ -4,6 +4,7 @@ import './cool-face.scss';
 const CoolFace = () => (
     <div className="container-one">
         <div className="container">
+            <div className="bg"></div>
             <div className="head">
                 <div className="eye left">
                     <div className="cutout"></div>
