@@ -9,6 +9,21 @@
         justify-content: center;
         position: relative;
 
+        .body {
+            position: absolute;
+            height: 50px;
+            width: 100px;
+            background: rgb(0, 140, 255);
+            top: 350px;
+            border: 10px solid black;
+            border-radius: 100% 100% 100% 100% / 100% 100% 0% 0%;
+
+            &::before, &::after {
+                position: absolute;
+                content: ""
+            }
+        }
+
         .head {
             width: 300px;
             height: 300px;
@@ -19,64 +34,94 @@
             justify-content: center;
             display: flex;
             align-items: baseline;
-        }
 
-        .left, .right {
-            background: black;
-            border-radius: 50%;
-            width: 175px;
-            height: 175px;
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .left {
-            margin-left: -180px;
-        }
-
-        .right {
-            margin-left: 180px
-        }
-
-        .left, .right {
-            .cutout {
+            .mouth {
+                width: 180px;
+                height: 180px;
                 position: absolute;
-                width: 100px;
-                height: 100px;
+                border: 10px solid black;
+                border-radius: 50%;
+                align-self: center;
+                clip-path: circle(60% at 49% 100%);
+
+                &::before, &::after {
+                    position: absolute;
+                    content: "";
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    border: 10px solid black;
+                    top: 102px;
+                    left: -9px;
+                    clip-path: circle(50% at 0 0);
+                }
+
+                &::after {
+                    left: 140px;
+                    top: 107px;
+                    clip-path: circle(50% at 100% 0);
+                }
+            }
+
+            .left, .right {
+                background: black;
+                border-radius: 50%;
+                width: 175px;
+                height: 175px;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .left {
+                margin-left: -180px;
+            }
+    
+            .right {
+                margin-left: 180px
+            }
+    
+            .left, .right {
+                .cutout {
+                    position: absolute;
+                    width: 100px;
+                    height: 100px;
+                    background: white;
+                    border-radius: 50%;
+                    align-self: flex-end;
+                    margin-bottom: -50px;
+                    
+                }
+            }
+    
+            .left::before, .right::before {
+                content: "";
+                position: absolute;
+                width: 175px;
+                height: 175px;
+                border-radius: 50%;
+                box-shadow: inset -22px 5px 0 3px rgba(255, 255, 255, 0.164);
+            }
+    
+            .left::before, .right::after {
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 10px;
                 background: white;
                 border-radius: 50%;
-                align-self: flex-end;
-                margin-bottom: -50px;
-                
+            }
+    
+            .right::after {
+                width: 30px;
+                height: 30px;
+                background: transparent;
+                border: 5px solid white;
             }
         }
 
-        .left::before, .right::before {
-            content: "";
-            position: absolute;
-            width: 175px;
-            height: 175px;
-            border-radius: 50%;
-            box-shadow: inset -22px 5px 0 3px rgba(255, 255, 255, 0.164);
-        }
-
-        .left::before, .right::after {
-            content: "";
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: white;
-            border-radius: 50%;
-        }
-
-        .right::after {
-            width: 30px;
-            height: 30px;
-            background: transparent;
-            border: 5px solid white;
-        }
+        
 
         .head::before {
             content: "";
