@@ -21,6 +21,63 @@
             align-items: baseline;
         }
 
+        .left, .right {
+            background: black;
+            border-radius: 50%;
+            width: 175px;
+            height: 175px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left {
+            margin-left: -180px;
+        }
+
+        .right {
+            margin-left: 180px
+        }
+
+        .left, .right {
+            .cutout {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                background: white;
+                border-radius: 50%;
+                align-self: flex-end;
+                margin-bottom: -50px;
+                
+            }
+        }
+
+        .left::before, .right::before {
+            content: "";
+            position: absolute;
+            width: 175px;
+            height: 175px;
+            border-radius: 50%;
+            box-shadow: inset -22px 5px 0 3px rgba(255, 255, 255, 0.164);
+        }
+
+        .left::before, .right::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .right::after {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: 5px solid white;
+        }
+
         .head::before {
             content: "";
             position: absolute;
