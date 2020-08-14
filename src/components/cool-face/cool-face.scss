@@ -1,0 +1,20 @@
+.container-one {
+    background-color: #5ca2c6;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .head {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 10px solid black;
+            background: white;
+        }
+      }
+  }
